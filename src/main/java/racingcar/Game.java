@@ -11,8 +11,12 @@ public class Game {
         this.players.add(new Car(name));
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setCount(String countString) {
+        try {
+            this.count = Integer.parseInt(countString);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public String checkWinner() {

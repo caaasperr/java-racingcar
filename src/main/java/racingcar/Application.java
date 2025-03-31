@@ -14,16 +14,13 @@ public class Application {
 
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String rawCarNames = Console.readLine();
-
         String[] carNames = divideRawCarName(rawCarNames);
         for (String carName : carNames) {
             game.addPlayer(carName);
         }
 
-        System.out.println("시도할 회수는 몇회인가요?");
-        String rawAttemptCount = Console.readLine();
-
-        int attemptCount = Integer.parseInt(rawAttemptCount);
+        System.out.println("시도할 횟수는 몇회인가요?");
+        String attemptCount = Console.readLine();
         game.setCount(attemptCount);
 
         game.run();
